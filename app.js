@@ -1,4 +1,8 @@
 var createError = require('http-errors');
+
+var path = require('path');
+var cookieParser = require('cookie-parser');
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -6,7 +10,7 @@ var logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const productsRouter = require('./routes/products')
+const productsRouter = require('./routes/productos')
 
 var app = express();
 
@@ -20,10 +24,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* rutas */
+// rutas
 app.use('/', indexRouter); // http://localhost:3000
 app.use('/users', usersRouter); //http://localhost:3000/users
-app.use('/products',productsRouter); // http:localhost:3000/products
+app.use('/productos', productsRouter); // http:localhost:3000/productos
 
 
 // catch 404 and forward to error handler
@@ -42,4 +46,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+ module.exports = app;

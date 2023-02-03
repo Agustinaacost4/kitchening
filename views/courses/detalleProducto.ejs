@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body >
+  <!-- encabezado --> <%- include('../partials/header') %>
+ 
+  <article class="home__main__section__article animate__animated">
+    <div class="home__main__section__article--imagen">
+      <img class="home__main__section__article--imagen-product" src="/images/cursos/<%= image %> " alt="">
+      <img class="home__main__section__article--imagen-sticker" src="/images/cursos/<%= image %> " alt="">
+      <a class="home__main__section__article--imagen-zoom" href="">ampliar foto</a>
+    </div>
+    <div class="home__main__section__article--contenido">
+      <h4><%= title %>  ></h4>
+      <p><%= description %> </p>
+      <a href="/courses/detalleProducto/<%= id %> ">ver más</a>
+    </div>
+  </article>
+    <%- include('../partials/whatsApp') %>
+  
+  
+  <footer class="footer">
+    <nav class="footer__nav">
+      <ul class="footer__nav--menu">
+        <li><a href="/">home</a></li>
+        <li><a href="/quienes">quienes</a></li>
+        <li><a href="/servicios">servicios</a></li>
+        <li><a href="/portfolio">portfolio</a></li>
+        <li><a href="/sucursales">sucursales</a></li>
+        <li><a href="/contacto">contacto</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <%- include('../partials/scripts') %>
+</body>
+
+</html>
